@@ -1,3 +1,13 @@
+<#
+
+***************   This script is provided AS-IS without any warranty to any damage that may occured. It will delete emails, if you are using it it's AT YOUR OWN RISK!  ***********
+
+Version 1.0
+Inital release
+
+#>
+
+
 Function HR_Sel_File
 {
     $FileBrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{ 
