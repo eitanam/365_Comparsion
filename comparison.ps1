@@ -60,11 +60,11 @@ Function check()
         }
     }
     #compare the rrays and export the results
-    Compare-Object -ReferenceObject $365_Active_Users -DifferenceObject $HR_ActiveUsers | Where-Object {$_.SideIndicator -eq "<="} | Select-Object InputObject | ConvertTo-Csv -NoTypeInformation | Select-Object -Skip 1 | Set-Content $env:temp\NotInTW.csv
+    Compare-Object -ReferenceObject $365_Active_Users -DifferenceObject $HR_ActiveUsers | Where-Object {$_.SideIndicator -eq "<="} | Select-Object InputObject | ConvertTo-Csv -NoTypeInformation | Select-Object -Skip 1 | Set-Content $env:temp\NotInCompany.csv
     [System.Windows.Forms.MessageBox]::Show('The comparison has been completed','365 Users report','Ok','Information')
     $objExcel = New-Object -ComObject Excel.Application
     $folder = $env:temp
-    $file = "\NotInTW.csv"
+    $file = "\NotInCompany.csv"
     $path = join-path $folder $file
     $objExcel.Workbooks.Open($path)
     $objExcel.Visible = $true
